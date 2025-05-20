@@ -1,11 +1,21 @@
 # Broken Scores Solution
 
-score = float(input("Enter score: "))
-if score < 0 or score > 100:
-    print("Invalid score")
-elif score >= 90:
-    print("Excellent")
-elif score >= 50:
-    print("Pass")
-else:
-    print("Bad")
+def main():
+    """Get number score and print status"""
+    score = float(input("Enter score: "))
+    print(assign_status(score))
+
+
+def assign_status(score):
+    """Assign status based on number score"""
+    if score < 0 or score > 100:
+        return "Invalid score"
+    elif score >= 90:
+        return "Excellent"
+    elif score >= 50:
+        return "Pass"
+    else:
+        return "Bad"
+
+
+main()
