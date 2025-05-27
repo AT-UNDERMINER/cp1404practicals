@@ -16,13 +16,13 @@ for i in range(20, 0, -1):
 print()
 
 # c
-num_stars = int(input("Number of stars: "))
-for i in range(num_stars):
+number_of_stars = int(input("Number of stars: "))
+for i in range(number_of_stars):
     print('*', end='')
 print()
 
 # d
-num_stars = int(input("Number of stars: "))
-for i in range(num_stars + 1):
+number_of_stars = int(input("Number of stars: "))
+for i in range(number_of_stars + 1):
     print('*' * i)
 print()
