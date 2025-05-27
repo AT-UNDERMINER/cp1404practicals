@@ -1,5 +1,6 @@
 MIN_LENGTH = 4
 
+
 def main():
     """Get and print stars using functions"""
     password = get_password(MIN_LENGTH)
@@ -20,4 +21,5 @@ def print_stars(password_length):
     print('*' * len(password_length))
 
 
-main()
+if __name__ == "__main__":
+    main()
