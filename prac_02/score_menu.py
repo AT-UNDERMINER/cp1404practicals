@@ -45,5 +45,6 @@ def print_stars(score):
     """Print as many stars as the score (rounded to integer)."""
     print("*" * int(score))
 
+
 if __name__ == "__main__":
     main()
