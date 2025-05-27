@@ -3,7 +3,7 @@
 
 def main():
     """Get number score and print status"""
-    score = float(input("Enter score: "))
+    score = float(input("Enter score (0-100): "))
     print(determine_result(score))
 
 
@@ -19,5 +19,5 @@ def determine_result(score):
 
 # Call the main function ONLY if the file is being run as
 # a standalone program (Pg 304 Textbook)
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
