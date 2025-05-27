@@ -35,4 +35,5 @@ def convert_f_to_c(fahrenheit):
     return 5 / 9 * (fahrenheit - 32)
 
 
-main()
+if __name__ == "__main__":
+    main()
