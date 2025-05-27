@@ -17,6 +17,7 @@ def determine_result(score):
         return "Pass"
     return "Bad"
 
-
-
-main()
+# Call the main function ONLY if the file is being run as
+# a standalone program (Pg 304 Textbook)
+if __name__ == '__main__':
+    main()
