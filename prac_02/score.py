@@ -1,10 +1,14 @@
 """Program to get a score from the user and print the corresponding status."""
 
+from random import randint
+
 
 def main():
     """Get number score and print status"""
     score = float(input("Enter score (0-100): "))
+    random_score = randint(0, 100)
     print(determine_result(score))
+    print(f"Random score is: {random_score} which is {determine_result(random_score)}.")
 
 
 def determine_result(score):
