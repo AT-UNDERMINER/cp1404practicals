@@ -7,6 +7,7 @@ FILENAME = "subject_data.txt"
 
 
 def main():
+    """Print data and subject data"""
     data = load_data()
     print(data)
     display_subjects(data)
