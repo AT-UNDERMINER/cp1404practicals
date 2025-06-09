@@ -1,3 +1,9 @@
+"""
+Damien Turner
+CP1404 - Practical Solution
+Program description: lists_warmup.py questions answers
+"""
+
 numbers = [3, 1, 4, 1, 5, 9, 2]
 
 numbers[0]  # [3]
