@@ -40,5 +40,5 @@ def main():
     email_to_name = get_email_name_mapping()
     display_email_name_pairs(email_to_name)
 
-
-main()
+if __name__ == "__main__":
+    main()
