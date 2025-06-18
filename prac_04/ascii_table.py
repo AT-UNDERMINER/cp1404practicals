@@ -12,10 +12,8 @@ def main():
     character = input("Enter a character: ")
     print(f"The ASCII code for {character} is {ord(character)}")
 
-    number = int(input(f"Enter a number between {LOWER} and {UPPER}: "))
-    while number < LOWER or number > UPPER:
-        print("Invalid input.")
-        number = int(input(f"Enter a number between {LOWER} and {UPPER}: "))
+    # Use get_number to validate the code input
+    number = get_number(LOWER, UPPER)
     print(f"The character for {number} is {chr(number)}")
 
     columns = int(input("Enter the number of columns to display: "))
@@ -32,6 +30,20 @@ def print_ascii_table(columns):
             print()
     if count % columns != 0:
         print()  # Ensure the final line ends with a newline
+
+
+def get_number(lower, upper):
+    """Get an integer from user between lower and upper inclusive, re-prompting on invalid input."""
+    prompt = f"Enter a number ({lower}-{upper}): "
+    value = None
+    while value is None or value < lower or value > upper:
+        try:
+            value = int(input(prompt))
+            if value < lower or value > upper:
+                print(f"Please enter a number between {lower} and {upper}.")
+        except ValueError:
+            print("Please enter a valid number!")
+    return value
 
 
 if __name__ == "__main__":
