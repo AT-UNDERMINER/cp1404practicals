@@ -1,13 +1,14 @@
 """
 Damien Turner
 CP1404 - Practical Solution
-Program description: TODO: Add description
+Program description: ProgrammingLanguage class for CP1404 Intermediate Exercise.
 Estimate: 20 mins
-Actual: TODO: Add time actual
+Actual: 15 mins
 """
 
 
 class ProgrammingLanguage:
+    """Represent a programming language object."""
 
     def __init__(self, name, typing, reflection, year):
         """Construct the ProgrammingLanguage values"""
