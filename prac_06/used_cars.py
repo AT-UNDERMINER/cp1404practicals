@@ -22,4 +22,5 @@ def main():
     print(new_car)
 
 
-main()
+if __name__ == "__main__":
+    main()
