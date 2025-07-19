@@ -43,7 +43,7 @@ def main():
             print(f"{new_proj.name} added")
 
         elif choice == "u":
-            print("u")
+            update_project(projects)
 
         elif choice == "q":
             save = input(f"Save to {DEFAULT_FILENAME}? (y/n): ").strip().lower()
@@ -144,6 +144,21 @@ def get_new_project():
     cost = float(input("Cost estimate: $"))
     completion = int(input("Percent complete: "))
     return Project(name, start_date, priority, cost, completion)
+
+
+def update_project(projects):
+    """Let the user update completion % and/or priority of a chosen project."""
+    for i, p in enumerate(projects):
+        print(f"{i} {p}")
+    choice = int(input("Project choice: "))
+    project = projects[choice]
+    print(project)
+    comp = input("New Percentage: ")
+    if comp:
+        project.completion_percentage = int(comp)
+    prio = input("New Priority: ")
+    if prio:
+        project.priority = int(prio)
 
 
 if __name__ == "__main__":
