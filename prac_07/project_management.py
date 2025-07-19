@@ -7,7 +7,7 @@ Actual: 180 mins
 """
 
 import datetime
-from project import Project
+from prac_07.project import Project
 
 DEFAULT_FILENAME = "projects.txt"
 

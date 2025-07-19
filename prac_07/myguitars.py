@@ -6,7 +6,7 @@ Estimate: 45 mins
 Actual: 38 mins
 """
 
-from guitar import Guitar
+from prac_07.guitar import Guitar
 
 FILENAME = "guitars.csv"
 

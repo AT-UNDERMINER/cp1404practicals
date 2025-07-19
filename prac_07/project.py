@@ -6,8 +6,6 @@ Estimate: 60 mins
 Actual: 40 mins
 """
 
-import datetime
-
 
 class Project:
     """Represent a project with attributes and helper methods."""
