@@ -35,7 +35,7 @@ def main():
             display_projects(projects)
 
         elif choice == "f":
-            print("f")
+            filter_projects_by_date(projects)
 
         elif choice == "a":
             print("a")
@@ -110,6 +110,27 @@ def display_projects(projects):
     print("Completed projects:")
     for p in completed:
         print(" ", p)
+
+
+def get_project_date(project):
+    """Return the start_date attribute (for sorting)."""
+    return project.start_date
+
+
+def filter_projects_by_date(projects):
+    """Prompt for a date and display projects starting after it."""
+    date_str = input("Show projects that start after date (dd/mm/yyyy): ")
+    after_date = datetime.datetime.strptime(date_str, "%d/%m/%Y").date()
+    # Collect matching projects
+    filtered = []
+    for p in projects:
+        if p.start_date > after_date:
+            filtered.append(p)
+    # Sort by date using our named helper
+    filtered.sort(key=get_project_date)
+    # Display
+    for p in filtered:
+        print(p)
 
 
 if __name__ == "__main__":
