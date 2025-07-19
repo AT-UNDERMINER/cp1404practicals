@@ -20,12 +20,16 @@ def main():
     while choice != "q":
         display_menu()
         choice = input(">>> ").strip().lower()
+
         if choice == "l":
             filename = input("Filename: ")
             projects = load_projects(filename)
             print(f"Loaded {len(projects)} projects from {filename}")
+
         elif choice == "s":
-            print("s")
+            filename = input("Filename to save to: ")
+            save_projects(filename, projects)
+            print(f"{len(projects)} projects saved to {filename}")
 
         elif choice == "d":
             print("d")
@@ -40,6 +44,10 @@ def main():
             print("u")
 
         elif choice == "q":
+            save = input(f"Save to {DEFAULT_FILENAME}? (y/n): ").strip().lower()
+            if save == "y":
+                save_projects(DEFAULT_FILENAME, projects)
+                print(f"{len(projects)} projects saved to {DEFAULT_FILENAME}")
             print("Thank you for using custom-built project management software.")
 
         else:
@@ -80,6 +88,16 @@ def load_projects(filename):
     except FileNotFoundError:
         print(f"File '{filename}' not found. Starting with an empty list.")
     return projects
+
+
+def save_projects(filename, projects):
+    """Save a list of Project to a tab-delimited file (with header)."""
+    with open(filename, "w") as out_file:
+        out_file.write("Name\tStart Date\tPriority\tCost Estimate\tCompletion Percentage\n")
+        for p in projects:
+            date_str = p.start_date.strftime("%d/%m/%Y")
+            out_file.write(f"{p.name}\t{date_str}\t{p.priority}"
+                           f"\t{p.cost_estimate}\t{p.completion_percentage}\n")
 
 
 if __name__ == "__main__":
