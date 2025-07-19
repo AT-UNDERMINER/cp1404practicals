@@ -32,7 +32,7 @@ def main():
             print(f"{len(projects)} projects saved to {filename}")
 
         elif choice == "d":
-            print("d")
+            display_projects(projects)
 
         elif choice == "f":
             print("f")
@@ -98,6 +98,18 @@ def save_projects(filename, projects):
             date_str = p.start_date.strftime("%d/%m/%Y")
             out_file.write(f"{p.name}\t{date_str}\t{p.priority}"
                            f"\t{p.cost_estimate}\t{p.completion_percentage}\n")
+
+
+def display_projects(projects):
+    """Display incomplete and completed projects, each sorted by priority."""
+    incomplete = sorted(p for p in projects if not p.is_complete())
+    completed = sorted(p for p in projects if p.is_complete())
+    print("Incomplete projects:")
+    for p in incomplete:
+        print(" ", p)
+    print("Completed projects:")
+    for p in completed:
+        print(" ", p)
 
 
 if __name__ == "__main__":
