@@ -3,7 +3,7 @@ Damien Turner
 CP1404 - Practical Solution
 Program description: Project Management Program
 Estimate: 90 mins
-Actual: TODO: Add time actual
+Actual: 180 mins
 """
 
 import datetime
