@@ -38,7 +38,9 @@ def main():
             filter_projects_by_date(projects)
 
         elif choice == "a":
-            print("a")
+            new_proj = get_new_project()
+            projects.append(new_proj)
+            print(f"{new_proj.name} added")
 
         elif choice == "u":
             print("u")
@@ -131,6 +133,17 @@ def filter_projects_by_date(projects):
     # Display
     for p in filtered:
         print(p)
+
+
+def get_new_project():
+    """Prompt the user for project details and return a new Project."""
+    name = input("Name: ")
+    date_str = input("Start date (dd/mm/yyyy): ")
+    start_date = datetime.datetime.strptime(date_str, "%d/%m/%Y").date()
+    priority = int(input("Priority: "))
+    cost = float(input("Cost estimate: $"))
+    completion = int(input("Percent complete: "))
+    return Project(name, start_date, priority, cost, completion)
 
 
 if __name__ == "__main__":
