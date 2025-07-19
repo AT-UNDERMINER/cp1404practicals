@@ -3,7 +3,7 @@ Damien Turner
 CP1404 - Practical Solution
 Program description: Read/write guitar objects from/to a CSV file.
 Estimate: 45 mins
-Actual: TODO: Add time actual
+Actual: 38 mins
 """
 
 from guitar import Guitar
