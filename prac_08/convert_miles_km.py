@@ -25,16 +25,24 @@ class ConvertMilesToKilometres(App):
 
     def handle_convert(self):
         """Convert miles to kilometres and update label"""
-        mile_input = float(self.root.ids.input_miles.text)
-        output_kilometers = float(mile_input) * MILES_TO_KM
+        input_miles = self.verify_miles_input(self.root.ids.input_miles.text)
+        output_kilometers = float(input_miles) * MILES_TO_KM
         self.output_text = f'{output_kilometers} km'
 
     def handle_increment(self, amount):
         """Increment the miles input up/down by a value"""
-        input_miles = float(self.root.ids.input_miles.text)
+        input_miles = self.verify_miles_input(self.root.ids.input_miles.text)
         input_miles += amount
         self.root.ids.input_miles.text = str(input_miles)
         self.handle_convert()
+
+    def verify_miles_input(self, input_miles):
+        """Verify the input is a float type"""
+        try:
+            verified_miles = float(input_miles)
+            return verified_miles
+        except ValueError:
+            return 0
 
 
 ConvertMilesToKilometres().run()
