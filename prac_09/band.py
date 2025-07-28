@@ -16,3 +16,11 @@ class Band:
     def __str__(self):
         """Return string representation of the band and its musicians."""
         return f"{self.name} ({', '.join(str(musician) for musician in self.musicians)})"
+
+    def add(self, musician):
+        """Add a Musician to the band."""
+        self.musicians.append(musician)
+
+    def play(self):
+        """Return a string for the band's performance by calling each musician's play()."""
+        return "\n".join(musician.play() for musician in self.musicians)
