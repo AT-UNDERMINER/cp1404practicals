@@ -17,7 +17,10 @@ def main():
     print(f"Fare for 18 km = ${fare:.2f}")
 
     # Check fare is correct: 18 km * (1.23 * 2) + 4.50 = 48.78
-    assert abs(fare - 48.78) < 0.01, f"Expected fare ~48.78, got {fare:.2f}"
+    # assert abs(fare - 48.78) < 0.01, f"Expected fare ~48.78, got {fare:.2f}"
+
+    # New assert assuming rounded value to the nearest 10c
+    assert fancy_taxi.get_fare() == 48.80  # assert the 18km trip is rounded
 
 
 if __name__ == "__main__":
