@@ -9,7 +9,13 @@ from unreliable_car import UnreliableCar
 
 def main():
     """Test the UnreliableCar class."""
+    reliable_car = UnreliableCar("Almost Perfect", 100, 90.0)
     unreliable_car = UnreliableCar("Maybe", 100, 30.0)
+
+    print("Reliable Car Test:")
+    for i in range(10):
+        distance = reliable_car.drive(10)
+        print(f"Attempt {i + 1}: Drove {distance} km")
 
     print("\nUnreliable Car Test:")
     for i in range(10):
