@@ -15,6 +15,7 @@ def main():
     print("Let's drive!")
     taxis = load_taxis()
     current_taxi = None
+    total_bill = 0.0
 
     print(MENU)
     choice = input(">>> ").lower()
@@ -23,7 +24,12 @@ def main():
         if choice == "c":
             current_taxi = choose_taxi(taxis)
         elif choice == "d":
-            print("d")
+            if current_taxi:
+                trip_cost = drive_taxi(current_taxi)
+                total_bill += trip_cost
+                print(f"Your {current_taxi.name} trip cost you ${trip_cost:.2f}")
+            else:
+                print("You need to choose a taxi before you can drive")
         else:
             print("Invalid option")
 
@@ -62,6 +68,19 @@ def choose_taxi(taxis):
     except ValueError:
         print("Invalid input")
     return None
+
+
+def drive_taxi(taxi):
+    """Drive the taxi for a given distance and return the cost."""
+    try:
+        distance = float(input("Drive how far? "))
+    except ValueError:
+        print("Invalid distance. Assuming 0 km.")
+        return 0.0
+
+    taxi.start_fare()
+    taxi.drive(distance)
+    return taxi.get_fare()
 
 
 if __name__ == "__main__":
