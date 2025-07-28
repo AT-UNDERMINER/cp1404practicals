@@ -33,10 +33,13 @@ def main():
         else:
             print("Invalid option")
 
+        print(f"Bill to date: ${total_bill:.2f}")
         print(MENU)
         choice = input(">>> ").lower()
 
-    print("Thank you for using the taxi simulator.")
+    print(f"Total trip cost: ${total_bill:.2f}")
+    print("Taxis are now:")
+    display_taxis(taxis)
 
 
 def load_taxis():
