@@ -17,6 +17,12 @@ def main():
     print(my_taxi)
     print(f"Current fare: ${my_taxi.get_fare():.2f}")
 
+    # Start a new fare and drive 100 km
+    my_taxi.start_fare()
+    my_taxi.drive(100)
+    print(my_taxi)
+    print(f"Current fare: ${my_taxi.get_fare():.2f}")
+
 
 if __name__ == "__main__":
     main()
